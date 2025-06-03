@@ -1,0 +1,106 @@
+%%%%%%%% Title slide details %%%%%%%%%%%%%%
+
+
+% Background Image
+\newcommand{\myBackround}
+{
+    \includegraphics[width=\paperwidth]{Background 4.png}
+}
+
+% Title
+\newcommand{\myTitle}
+{
+    Best customized Beamer Themes
+}
+
+% Subtitle
+\newcommand{\mySubTitle}
+{
+    Beautiful title slides: Model 4
+}
+
+% Author
+\newcommand{\myAuthor}   
+{
+    LaTeX-beamer.com
+}
+
+% Affiliation
+\newcommand{\myAffiliate}
+{
+    University name, City, Country
+}
+
+% Presentation Date
+\newcommand{\myDate}   
+{
+    \today
+}
+
+% Logo 1
+\newcommand{\myLogoA}   
+{
+    \includegraphics[width=3.5cm]{Beamer-Logo.png}
+}
+
+% Logo 2
+\newcommand{\myLogoB}   
+{
+    \includegraphics[width=1cm]{Logo.png}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%% Title slide code %%%%%%%%%%%
+\begin{tikzpicture}[remember picture,overlay]
+
+% Background image
+\node[above right,inner sep=0pt] at (current page.south west)
+    {
+        \myBackround
+    };
+    
+% Title & Subtitle
+\node
+[
+    above=0.5cm,
+    align=center,
+    fill=violet!10,
+    inner xsep=15pt,
+    inner ysep=10pt, 
+    minimum width=0.7\textwidth,
+    text width=0.6\textwidth
+] (title) at (current page.center)
+{
+    \LARGE \myTitle  \\[5pt]
+    \small \mySubTitle
+};
+
+% Author 
+\node[ below=0.5cm] (author) at (title.south){\myAuthor};
+
+% Author 
+\node[ below=0.1cm] (affiliate) at (author.south){\small \myAffiliate};
+
+% Date
+\node[below=0.25cm] (date) at (affiliate.south){\large \myDate};
+
+% Logo A
+\node
+[
+    below right =0.25cm and 0.5cm
+] at (current page.north west)
+{
+    \myLogoA
+};
+
+% Logo B
+\node
+[
+    below left =0.25cm and 0.5cm
+] at (current page.north east)
+{
+    \myLogoB
+};
+
+\end{tikzpicture}
